@@ -1,24 +1,64 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
 
-Things you may want to cover:
+|Column            |Type  |Options                 |
+|------------------|------|------------------------|
+|nickname          |string|null: false             |
+|email             |string|null: false, unique:true|
+|encrypted_password|string|null: false             |
+|name              |string|null: false             |
+|name_pron         |string|null: false             |
+|birthday          |date  |null: false             |
 
-* Ruby version
+### Association
 
-* System dependencies
+-has_many :items
+-has_many :purchase
 
-* Configuration
+## items テーブル
+|Column      |Type  |Options    |
+|------------|------|-----------|
+|picture     |image |null: false|
+|item_name   |string|null: false|
+|item_info   |string|null: false|
+|item_cat    |string|null: false|
+|item_cond   |string|null: false|
+|ship_charges|string|null: false|
+|ship_area   |string|null: false|
+|ship_days   |string|null: false|
+|price       |string|null: false|
 
-* Database creation
+### Association
 
-* Database initialization
+-belongs_to :users
+-has_one :purchase
 
-* How to run the test suite
+## purchase テーブル
 
-* Services (job queues, cache servers, search engines, etc.)
+|Column     |Type   |Options    |
+|-----------|-------|-----------|
+|tip_cr     |integer|null: false|
+|effect_cr  |integer|null: false|
+|security_cr|integer|null: false|
 
-* Deployment instructions
+### Association
 
-* ...
+-belongs_to :users
+-belongs_to :items
+-has_one :address
+
+## address テーブル
+
+|Column|Type   |Options    |
+|------|-------|-----------|
+|post  |integer|null: false|
+|pref  |string |null: false|
+|munic |string |null: false|
+|addr  |string |null: false|
+|bidg  |string |null: false|
+|tel   |integer|null: false|
+
+### Association
+
+-belongs_to :purchase
