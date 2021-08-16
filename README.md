@@ -21,10 +21,10 @@
 ## items テーブル
 |Column         |Type   |Options    |
 |---------------|-------|-----------|
-|item_name      |string |null: false|
-|item_info      |text   |null: false|
-|item_cat_id    |integer|null: false|
-|item_cond_id   |integer|null: false|
+|name           |string |null: false|
+|info           |text   |null: false|
+|cat_id         |integer|null: false|
+|cond_id        |integer|null: false|
 |ship_charges_id|integer|null: false|
 |ship_area_id   |integer|null: false|
 |ship_days_id   |integer|null: false|
@@ -35,12 +35,12 @@
 -belongs_to :users
 -has_one :purchase
 
-## purchase テーブル
+## purchases テーブル
 
-|Column|Type  |Options                      |
-|------|------|-----------------------------|
-|user  |string|null: false, foreign_key:true|
-|item  |string|null: false, foreign_key:true|
+|Column|Type      |Options                      |
+|------|----------|-----------------------------|
+|user  |references|null: false, foreign_key:true|
+|item  |references|null: false, foreign_key:true|
 
 ### Association
 
@@ -48,16 +48,17 @@
 -belongs_to :item
 -has_one :address
 
-## address テーブル
+## addresses テーブル
 
-|Column|Type  |Options    |
-|------|------|-----------|
-|post  |string|null: false|
-|pref  |string|null: false|
-|munic |string|null: false|
-|addr  |string|null: false|
-|bidg  |string|
-|tel   |string|null: false|
+|Column  |Type      |Options                      |
+|--------|----------|-----------------------------|
+|post    |string    |null: false                  |
+|pref_id |intenger  |null: false                  |
+|munic   |string    |null: false                  |
+|addr    |string    |null: false                  |
+|bidg    |string    |
+|tel     |string    |null: false                  |
+|purchase|references|null: false, foreign_key:true|
 
 ### Association
 
