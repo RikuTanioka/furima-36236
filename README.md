@@ -50,15 +50,15 @@
 
 ## addresses テーブル
 
-|Column  |Type      |Options                      |
-|--------|----------|-----------------------------|
-|post    |string    |null: false                  |
-|pref_id |intenger  |null: false                  |
-|munic   |string    |null: false                  |
-|addr    |string    |null: false                  |
-|bidg    |string    |
-|tel     |string    |null: false                  |
-|purchase|references|null: false, foreign_key:true|
+|Column      |Type      |Options                      |
+|------------|----------|-----------------------------|
+|post        |string    |null: false                  |
+|ship_area_id|intenger  |null: false                  |
+|munic       |string    |null: false                  |
+|addr        |string    |null: false                  |
+|bidg        |string    |
+|tel         |string    |null: false                  |
+|purchase    |references|null: false, foreign_key:true|
 
 ### Association
 
