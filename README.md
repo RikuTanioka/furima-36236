@@ -7,8 +7,10 @@
 |nickname          |string|null: false             |
 |email             |string|null: false, unique:true|
 |encrypted_password|string|null: false             |
-|name              |string|null: false             |
-|name_pron         |string|null: false             |
+|name_sur          |string|null: false             |
+|name_first        |string|null: false             |
+|name_sur_pron     |string|null: false             |
+|name_first_pron   |string|null: false             |
 |birthday          |date  |null: false             |
 
 ### Association
@@ -35,10 +37,10 @@
 
 ## purchase テーブル
 
-|Column|Type  |Options    |
-|------|------|-----------|
-|user  |string|null: false|
-|item  |string|null: false|
+|Column|Type  |Options                      |
+|------|------|-----------------------------|
+|user  |string|null: false, foreign_key:true|
+|item  |string|null: false, foreign_key:true|
 
 ### Association
 
