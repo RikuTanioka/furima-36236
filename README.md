@@ -23,16 +23,16 @@
 |---------------|-------|-----------|
 |name           |string |null: false|
 |info           |text   |null: false|
-|cat_id         |integer|null: false|
+|category_id    |integer|null: false|
 |cond_id        |integer|null: false|
-|ship_charges_id|integer|null: false|
+|ship_charge_id |integer|null: false|
 |ship_area_id   |integer|null: false|
-|ship_days_id   |integer|null: false|
-|prices         |integer|null: false|
+|ship_day_id    |integer|null: false|
+|price          |integer|null: false|
 
 ### Association
 
--belongs_to :users
+-belongs_to :user
 -has_one :purchase
 
 ## purchases テーブル
