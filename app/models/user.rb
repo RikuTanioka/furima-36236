@@ -13,4 +13,5 @@ class User < ApplicationRecord
     validates :name_first_pron, format: {with: /\A[ァ-ヶー]+\z/, message: "is invalid. Input full-width katakana characters."}
   end
     
+  validates :password, format: {with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i, message: 'は半角英数を両方含む必要があります'}
 end
